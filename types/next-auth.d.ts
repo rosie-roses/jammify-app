@@ -17,7 +17,7 @@ declare module "next-auth" {
   interface Account {
     access_token: string;
     refresh_token: string;
-    expires_in: number;  // Added 'expires_in' property
+    expires_in: number;
   }
 }
 

@@ -44,12 +44,20 @@ export const authOptions: NextAuthOptions = {
     strategy: "jwt",
   },
   callbacks: {
-    async jwt({ token, account, user }: { token: JWT; account: Account | null; user: User | AdapterUser }) {
+    async jwt({
+      token,
+      account,
+      user,
+    }: {
+      token: JWT;
+      account: Account | null;
+      user: User | AdapterUser;
+    }) {
       // Initial sign-in
       if (account && user) {
         token.access_token = account.access_token || "";
         token.refresh_token = account.refresh_token || "";
-        token.expires_at = Date.now() + account.expires_in * 1000
+        token.expires_at = Date.now() + account.expires_in * 1000;
         token.user = {
           id: user.id,
           name: user.name || "",

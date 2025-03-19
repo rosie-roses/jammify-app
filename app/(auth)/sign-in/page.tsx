@@ -25,9 +25,14 @@ const SignIn = () => {
             width={270}
           />
         </CardHeader>
-        <CardBody className="pb-0 pt-2 px-4 flex-col items-center">
+        <CardBody className="pb-0 pt-2 px-4 flex-col items-center text-foreground">
           <p>Your personalised music experience powered by Spotify.</p>
-          <Button onPress={handleSpotifyLogin} color="primary" startContent={<SpotifyIcon />}  className="mt-7 font-mono flex items-center">
+          <Button
+            onPress={handleSpotifyLogin}
+            color="primary"
+            startContent={<SpotifyIcon size={24} />}
+            className="mt-10 font-mono flex items-center"
+          >
             Sign In with Spotify
           </Button>
         </CardBody>
