@@ -1,12 +1,13 @@
 import "@/styles/globals.css";
-import { Metadata, Viewport } from "next";
+import { Metadata } from "next";
 import clsx from "clsx";
 
 import { Providers } from "./providers";
 
 import { siteConfig } from "@/config/site";
-import { fontSans } from "@/config/fonts";
-import { Navbar } from "@/components/navbar";
+import { fontMono, fontSans } from "@/config/fonts";
+import { getServerSession } from "next-auth";
+import SessionProvider from "@/app/session-provider";
 
 export const metadata: Metadata = {
   title: {
@@ -19,18 +20,12 @@ export const metadata: Metadata = {
   },
 };
 
-export const viewport: Viewport = {
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "white" },
-    { media: "(prefers-color-scheme: dark)", color: "black" },
-  ],
-};
-
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const session = await getServerSession();
   return (
     <html suppressHydrationWarning lang="en">
       <head />
@@ -38,15 +33,11 @@ export default function RootLayout({
         className={clsx(
           "min-h-screen bg-background font-sans antialiased",
           fontSans.variable,
+          fontMono.variable
         )}
       >
         <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
-          <div className="relative flex flex-col h-screen">
-            <Navbar />
-            <main className="container mx-auto max-w-7xl pt-16 px-6 flex-grow">
-              {children}
-            </main>
-          </div>
+          <SessionProvider session={session}>{children}</SessionProvider>
         </Providers>
       </body>
     </html>
