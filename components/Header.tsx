@@ -11,6 +11,7 @@ import { Popover, PopoverContent, PopoverTrigger } from "@heroui/popover";
 import { Card, CardBody, CardHeader } from "@heroui/card";
 import { signOut, useSession } from "next-auth/react";
 import { Navbar, NavbarBrand, NavbarContent, NavbarItem } from "@heroui/navbar";
+import MobileNav from "./MobileNav";
 import SpotifyWebApi from "spotify-web-api-js";
 
 const Header = ({
@@ -137,6 +138,9 @@ const Header = ({
                 </Card>
               </PopoverContent>
             </Popover>
+          </NavbarItem>
+          <NavbarItem className="flex sm:hidden">
+            <MobileNav data={data} spotify={spotify} />
           </NavbarItem>
         </NavbarContent>
       </Navbar>
