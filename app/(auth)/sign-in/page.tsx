@@ -31,7 +31,7 @@ const SignIn = () => {
             onPress={handleSpotifyLogin}
             color="primary"
             startContent={<SpotifyIcon size={24} />}
-            className="mt-10 font-mono flex items-center"
+            className="mt-10 flex flex-row gap-x-2 text-medium items-center"
           >
             Sign In with Spotify
           </Button>

@@ -136,3 +136,107 @@ export const LogOutIcon: React.FC<IconSvgProps> = ({
     </svg>
   );
 };
+
+export const PlaylistIcon: React.FC<IconSvgProps> = ({
+  fill = "currentColor",
+  size,
+  height,
+  width,
+  ...props
+}) => {
+  return (
+    <svg
+      height={size || height}
+      width={size || width}
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill={fill}
+      {...props}
+    >
+      <path
+        clipRule="evenodd"
+        d="M16 2L21 7V21.0082C21 21.556 20.5551 22 20.0066 22H3.9934C3.44476 22 3 21.5447 3 21.0082V2.9918C3 2.44405 3.44495 2 3.9934 2H16ZM11 12.05C10.8384 12.0172 10.6712 12 10.5 12C9.11929 12 8 13.1193 8 14.5C8 15.8807 9.11929 17 10.5 17C11.8807 17 13 15.8807 13 14.5V10H16V8H11V12.05Z"
+        fill={fill}
+        fillRule="evenodd"
+      />
+    </svg>
+  );
+};
+
+export const AlbumIcon: React.FC<IconSvgProps> = ({
+  fill = "currentColor",
+  size,
+  height,
+  width,
+  ...props
+}) => {
+  return (
+    <svg
+      height={size || height}
+      width={size || width}
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill={fill}
+      {...props}
+    >
+      <path
+        clipRule="evenodd"
+        d="M12 2C17.52 2 22 6.48 22 12C22 17.52 17.52 22 12 22C6.48 22 2 17.52 2 12C2 6.48 6.48 2 12 2ZM12 16C14.2133 16 16 14.2133 16 12C16 9.78667 14.2133 8 12 8C9.78667 8 8 9.78667 8 12C8 14.2133 9.78667 16 12 16ZM12 11C12.55 11 13 11.45 13 12C13 12.55 12.55 13 12 13C11.45 13 11 12.55 11 12C11 11.45 11.45 11 12 11Z"
+        fill={fill}
+        fillRule="evenodd"
+      />
+    </svg>
+  );
+};
+
+export const ArtistIcon: React.FC<IconSvgProps> = ({
+  fill = "currentColor",
+  size,
+  height,
+  width,
+  ...props
+}) => {
+  return (
+    <svg
+      height={size || height}
+      width={size || width}
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill={fill}
+      {...props}
+    >
+      <path
+        clipRule="evenodd"
+        d="M17.841 15.659L18.017 15.836L18.1945 15.659C19.0732 14.7803 20.4978 14.7803 21.3765 15.659C22.2552 16.5377 22.2552 17.9623 21.3765 18.841L18.0178 22.1997L14.659 18.841C13.7803 17.9623 13.7803 16.5377 14.659 15.659C15.5377 14.7803 16.9623 14.7803 17.841 15.659ZM12 14V22H4C4 17.6651 7.44784 14.1355 11.7508 14.0038L12 14ZM12 1C15.315 1 18 3.685 18 7C18 10.315 15.315 13 12 13C8.685 13 6 10.315 6 7C6 3.685 8.685 1 12 1Z"
+        fill={fill}
+        fillRule="evenodd"
+      />
+    </svg>
+  );
+};
+
+export const LikedSongsIcon: React.FC<IconSvgProps> = ({
+  fill = "currentColor",
+  size,
+  height,
+  width,
+  ...props
+}) => {
+  return (
+    <svg
+      height={size || height}
+      width={size || width}
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill={fill}
+      {...props}
+    >
+      <path
+        clipRule="evenodd"
+        d="M16.5 3C19.5376 3 22 5.5 22 9C22 16 14.5 20 12 21.5C9.5 20 2 16 2 9C2 5.5 4.5 3 7.5 3C9.35997 3 11 4 12 5C13 4 14.64 3 16.5 3Z"
+        fill={fill}
+        fillRule="evenodd"
+      />
+    </svg>
+  );
+};
