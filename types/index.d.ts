@@ -15,3 +15,18 @@ declare interface LeftSidebarProps {
   onSelectAlbum: (albumId: string | null) => void;
   onSelectArtist: (artistId: string | null) => void;
 }
+
+declare interface MainComponentProps {
+  spotify: SpotifyWebApi.SpotifyWebApiJs | null;
+  selectedPlaylistId: string | null;
+}
+
+declare interface PlaylistProps {
+  spotify: SpotifyWebApi.SpotifyWebApiJs | null;
+  selectedPlaylistId: string | null;
+}
+
+declare interface PlaylistHeaderProps {
+  spotify: SpotifyWebApi.SpotifyWebApiJs | null;
+  playlist: SpotifyApi.SinglePlaylistResponse | null;
+}

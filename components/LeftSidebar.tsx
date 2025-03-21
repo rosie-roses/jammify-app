@@ -6,7 +6,6 @@ import UserPlaylists from "./UserPlaylists";
 import SavedAlbums from "./SavedAlbums";
 import FollowedArtists from "./FollowedArtists";
 import { LeftSidebarProps } from "@/types";
-import { ScrollShadow } from "@heroui/scroll-shadow";
 import { Tab, Tabs } from "@heroui/tabs";
 import { AlbumIcon, ArtistIcon, LikedSongsIcon, PlaylistIcon } from "./icons";
 
@@ -17,14 +16,9 @@ const LeftSidebar: React.FC<LeftSidebarProps> = ({
   onSelectAlbum,
   onSelectArtist,
 }) => {
-  const [selectedTab, setSelectedTab] = useState<string>("Liked Songs");
-
-  const handleTabClick = (tab: string) => {
-    setSelectedTab(tab);
-  };
 
   return (
-    <div className="bg-content1 p-4 rounded-xl w-[325px] font-sans hidden sm:flex flex-col h-full overflow-y-auto">
+    <div className="bg-content1 p-4 rounded-xl w-[325px] font-sans hidden md:flex flex-col h-full overflow-y-auto">
       <Tabs aria-label="Options" variant="light" radius="full">
         <Tab
           key="playlists"
@@ -35,7 +29,12 @@ const LeftSidebar: React.FC<LeftSidebarProps> = ({
             </div>
           }
         >
-          <UserPlaylists spotify={spotify} />
+          <UserPlaylists
+            spotify={spotify}
+            onSelectPlaylist={(playlistId) => {
+              onSelectPlaylist(playlistId);
+            }}
+          />
         </Tab>
         <Tab
           key="albums"

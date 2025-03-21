@@ -13,7 +13,7 @@ const UserPlaylists = ({
   onSelectPlaylist,
 }: {
   spotify: SpotifyWebApi.SpotifyWebApiJs | null;
-  onSelectPlaylist?: (playlistId: string | null) => void;
+  onSelectPlaylist: (playlistId: string | null) => void;
 }) => {
   const {
     userPlaylists: playlists,
@@ -38,7 +38,7 @@ const UserPlaylists = ({
             <li
               key={playlist.id}
               className="flex flex-row items-center space-x-4 p-2 cursor-pointer hover:bg-content2 rounded-md"
-              //   onClick={() => onSelectPlaylist(playlist.id)}
+              onClick={() => onSelectPlaylist(playlist.id)}
             >
               <Image
                 src={playlist.images[0].url}
@@ -48,10 +48,10 @@ const UserPlaylists = ({
                 radius="md"
               />
               <div className="flex flex-col w-[75%]">
-                <p className="text-small font-medium truncate">
+                <p className="text-medium font-medium truncate">
                   {playlist.name}
                 </p>
-                <p className="text-default-500 text-tiny truncate">
+                <p className="text-default-500 text-small truncate">
                   {playlist.owner.display_name}
                 </p>
               </div>
